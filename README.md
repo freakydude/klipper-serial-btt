@@ -45,8 +45,11 @@ sudo systemctl enable --now uart-bridge.service
 
 ## Prepare klipper/mainsail
 
-Copy the fd-macros folder to your config folder (where printer.cfg exists). Open `printer.cfg` and include the copied files from fd-macros folder
+Copy the `fd-macros` folder and the `fd-macros-example.cfg` to your config folder (where `printer.cfg` exists). Open `printer.cfg` and include the copied files from `fd-macros` folder.
+
+To start and adapting to your needs, also include (or copy and include) the `fd-macros-example.cfg` file.
 
 ```ini
 [include fd-macros/*.cfg]
+[fd-macros-example.cfg]
 ```
