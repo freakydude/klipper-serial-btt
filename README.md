@@ -4,13 +4,19 @@ A project to enable serial connected BigTreeTech-TouchScreens
 
 ## Prepare PI
 
-Create systemd service
+### Create systemd service
 
-```sh
+Copy systemd-service/uart-bridge.service to /etc/systemd/system/uart-bridge.service
+
+**OR**
+
+Create a new file
+
+```bash
 sudo nano /etc/systemd/system/uart-bridge.service
 ```
 
-Copy following content into that file
+and copy following content into that file
 
 ```ini
 [Unit]
@@ -32,7 +38,17 @@ RestartSec=15
 
 Reload services, start and enable the serial bridge
 
-```sh
+```bash
 sudo systemctl daemon-reload
 sudo systemctl enable --now uart-bridge.service
+```
+
+## Prepare klipper/mainsail
+
+Copy the fd-macros folder to your config folder (where printer.cfg exists)
+
+Open `printer.cfg` and include the files from
+
+```ini
+[include fd-macros/*.cfg]
 ```
