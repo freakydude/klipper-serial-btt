@@ -1,14 +1,14 @@
 # klipper-serial-btt
 
-A project to enable serial connected BigTreeTech-TouchScreens
+A project to enable serial connected BigTreeTech-TouchScreens with klipper
 
-## Prepare PI
+## Prepare your Raspberry Pi
 
-### Create systemd service
+### Copy systemd service
 
 Copy systemd-service/uart-bridge.service to /etc/systemd/system/uart-bridge.service
 
-**OR**
+### Alternative: Create service file manually
 
 Create a new file
 
@@ -45,9 +45,7 @@ sudo systemctl enable --now uart-bridge.service
 
 ## Prepare klipper/mainsail
 
-Copy the fd-macros folder to your config folder (where printer.cfg exists)
-
-Open `printer.cfg` and include the files from
+Copy the fd-macros folder to your config folder (where printer.cfg exists). Open `printer.cfg` and include the copied files from fd-macros folder
 
 ```ini
 [include fd-macros/*.cfg]
