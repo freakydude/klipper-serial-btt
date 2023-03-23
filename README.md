@@ -81,7 +81,7 @@ See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more deta
   ln -sf ~/klipper-serial-btt/fd-macros-example.cfg ~/printer_data/config/
   ```
 
-- Open `printer.cfg` and include the copied files from `fd-macros` folder.
+- Open `printer.cfg` and include the linked files from `fd-macros` folder.
 
 - To start and adapting to your needs, also include (or copy and include) the `fd-macros-example.cfg` file.
 
