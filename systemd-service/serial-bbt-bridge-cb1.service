@@ -1,15 +1,13 @@
 [Unit]
 Description=Bridge BTT Touchscreen wired with UART to virtual Klipper console
-Requires=network-online.target
-After=network-online.target
 
 [Install]
 WantedBy=multi-user.target
 
 [Service]
 Type=simple
-User=pi
+User=biqu
 RemainAfterExit=yes
-ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200
+ExecStart=socat -d /dev/ttyS0,b115200 /home/biqu/printer_data/comms/klippy.serial,b115200
 Restart=always
 RestartSec=15

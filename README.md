@@ -31,11 +31,21 @@ See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more deta
 
 - Copy systemd-service/serial-btt-bridge.service to /etc/systemd/system/serial-btt-bridge.service
 
-  ```bash
-  sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge.service /etc/systemd/system/serial-btt-bridge.service
-  ```
+  - For Raspberry Pi 3/4 or CM4
 
-- Open the service, adapt to your home directory
+    ```bash
+    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-rpi.service /etc/systemd/system/  serial-btt-bridge.service
+    ```
+
+  - For BigTreeTech CB1
+
+    ```bash
+    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-cb1.service /etc/systemd/system/  serial-btt-bridge.service
+    ```
+
+    In Addition, ensure you have `console=serial` in your `/boot/BoardEnv.txt`
+
+- _Optional:_ If yoy did anything custom: Open the service, adapt to your home directory and your user
 
   ```bash
   sudo nano /etc/systemd/system/serial-btt-bridge.service
