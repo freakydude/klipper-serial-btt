@@ -1,5 +1,6 @@
 [Unit]
 Description=Bridge BTT Touchscreen wired with UART to virtual Klipper console
+After=klipper.service
 
 [Install]
 WantedBy=multi-user.target
