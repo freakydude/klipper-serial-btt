@@ -58,6 +58,20 @@ See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more deta
   sudo systemctl status serial-btt-bridge.service
   ```
 
+- Optional: Configure your Moonraker update manager.
+
+  - Open your `moonraker.conf`
+  - Add a new section
+
+    ```yml
+    [update_manager klipper-serial-btt]
+    type: git_repo
+    primary_branch: main
+    path: ~/klipper-serial-btt
+    origin: https://github.com/freakydude/klipper-serial-btt.git
+    managed_services: klipper
+    ```
+
 ## Prepare klipper/mainsail
 
 - Link the `fd-macros` folder and the `fd-macros-example.cfg` into your config folder (where `printer.cfg` exists).
