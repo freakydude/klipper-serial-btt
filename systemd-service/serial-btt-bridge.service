@@ -1,5 +1,5 @@
 [Unit]
-Description=Bridge BTT Touchscreen to Klipper UART
+Description=Bridge BTT Touchscreen wired with UART to virtual Klipper console
 Requires=network-online.target
 After=network-online.target
 
