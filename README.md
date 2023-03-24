@@ -165,7 +165,7 @@ Switch to expert mode and configure following properties:
       ;[layer_z]
       ;LAYER:[layer_num]
 
-      SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num}
+      SET_PRINT_STATS_INFO CURRENT_LAYER={layer_num+1}
       ```
 
     - Color Change G-code:
