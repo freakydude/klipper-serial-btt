@@ -11,6 +11,26 @@ Feel free to help us with further improvements. General oriented pull requests a
 
 See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more details and news.
 
+**Use it at your own risk!!!**
+
+## State
+
+- This is work in progress. Tested with my Artillery Sidewinder X2 and latest Mainsail + Klipper
+- Printer State is working
+
+  - Temperature of Bed and Extruder
+  - Hotend fan speed
+  - Babysteps
+  - Movement
+  - Pause/Resume/Stop while "remote printing", so Mainsail is the master
+  - Printing from SD/USB and virtual "remote" SD Card
+  - Printing progress
+    - Current/ All Layer
+    - Remaining Time
+    - Percentage
+
+- Please help contributing and moving the project forward
+
 ## Prepare your Raspberry Pi / BTT CB1
 
 ### Requirements
@@ -51,9 +71,9 @@ See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more deta
   sudo nano /etc/systemd/system/serial-btt-bridge.service
   ```
 
-- Find the following line `ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200`. Replace `/home/pi` by your user. On a raspberry it's `/home/pi`, on a CB1 it's `/home/biqu` by default. Replace `/dev/ttyAMA0` with the serial (UART) interface your level-shifter and BigTreeTech-TouchScreen is connected. **Hint**: On the BigTreeTech CB1 it seems like UART serial pins are not enabled by default.
+  - Optional: Find the following line `ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200`. Replace `/home/pi` by your user. On a raspberry it's `/home/pi`, on a CB1 it's `/home/biqu` by default. Replace `/dev/ttyAMA0` with the serial (UART) interface your level-shifter and BigTreeTech-TouchScreen is connected. **Hint**: On the BigTreeTech CB1 it seems like UART serial pins are not enabled by default.
 
-  Optional: You could also replace "b115200" two times by the serial speed listed in your BigTreeTech Touchscreen. The default 115200Bit/sec is the safe an pre-configured speed. Make sure, you select the same speed in your Touchscreen too.
+  - Optional: You could also replace "b115200" two times by the serial speed listed in your BigTreeTech Touchscreen. The default 115200Bit/sec is the safe an pre-configured speed. Make sure, you select the same speed in your Touchscreen too.
 
 - Reload services, start and enable the serial bridge
 
