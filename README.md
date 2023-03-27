@@ -1,4 +1,8 @@
-# klipper-serial-btt
+# A project to use BigTreeTech TouchScreens (for Marlin) with Klipper
+
+**Caution!! This is work in progress, be aware you are watching your printer, use it at your own risk!!!**
+
+## About
 
 This is my project to enable serial (UART) connected BigTreeTech-TouchScreens with Klipper by emulating anything they need with macros. I tested it with an Artillery Sidewinder X2 printer. It comes with a relabeled Bigtreetech BTT-TFT28. It's one of the [supported screens](https://github.com/bigtreetech/BIGTREETECH-TouchScreenFirmware#supported-screens) of the open source BigTreeTech TouchScreenFirmware and is original made for Marlin/RepRap firmware.
 
@@ -11,16 +15,14 @@ Feel free to help us with further improvements. General oriented pull requests a
 
 See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more details and news.
 
-**Use it at your own risk!!!**
-
 ## State
 
 - This is work in progress. Tested with my Artillery Sidewinder X2 and latest Mainsail + Klipper
-- Printer State is working
+- The main use cases on a Cartesian printer (Artillery Sidewinder, Ender 3...) are working
 
   - Temperature of Bed and Extruder
   - Hotend fan speed
-  - Babysteps
+  - Babysteps/Z-Offset
   - Movement
   - Pause/Resume/Stop while "remote printing", so Mainsail is the master
   - Printing from SD/USB and virtual "remote" SD Card
@@ -35,8 +37,10 @@ See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more deta
 
 ### Requirements
 
-- running Klipper and Mainsail installation
-- basic printer config
+- A Raspberry Pi or BigTreeTech CB1
+- Running Klipper and Mainsail installation
+- Basic printer config
+- The will to try and help improve the macros
 
 ### Get this repository
 
