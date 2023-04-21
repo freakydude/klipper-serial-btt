@@ -1,6 +1,12 @@
 # A project to use BigTreeTech TouchScreens (for Marlin) with Klipper
 
-**Caution!! This is work in progress, be aware you are watching your printer, use it at your own risk!!!**
+## Caution
+
+First of all, and as always with my other posts and projects. I am not a company. I'm doing this in my spare time and mostly because I'm really excited to make these things work and improve things.
+
+I have tested all this stuff only with my own printer and the constellation around it. I did my best to make it all work without problems. However, **this is a work in progress. There is no guarantee. Be careful, watch your printer, double check things. Use it as is. I am not responsible for any damages or consequences of any kind.**.
+
+And yes, help and improve if you find something. I will put this project under an open source license, I have an idea which one is the right one...
 
 ## About
 
@@ -13,7 +19,9 @@ Due limitations of Klipper G-code macros, this project will conflict with the [m
 In general this code should work for any of these displays an may need additional changes here - but I cant test that.
 Feel free to help us with further improvements. General oriented pull requests are welcome.
 
-See my blog [https://blog.freakydu.de/](https://blog.freakydu.de/) for more details and news.
+## Intro and more details
+
+See my blog [Use your TouchScreen with Klipper on Sidewinder X2](https://blog.freakydu.de/posts/2023-03-23-use_bigtreetech_touchscreenfirmware_with_klipper_on_sidewinder_x2/) for more details and news.
 
 ## State
 
@@ -136,13 +144,14 @@ Feel free create pull requests if something general is wrong or missing.
 
 ### Prusa slicer settings
 
-Switch to expert mode and configure following properties:
+To enable all features, you have to configure things in your slicer (like in native Marlin)
+Switch to expert mode and configure the following properties:
 
 - Printer Settings
 
   - General
     - Firmware
-      - G-code flavor: Marlin (legacy)
+      - G-code flavor: Klipper or Marlin (legacy)
       - Supports remaining times: true
     - Advanced
       - Use relative E distances: false
@@ -151,8 +160,8 @@ Switch to expert mode and configure following properties:
     - Start G-code:
 
       ```gcode
-      M140 S0
-      M104 S0
+      M140 S0 # is not needed with Klipper G-code flavor
+      M104 S0 # is not needed with Klipper G-code flavor
 
       ;LAYER_COUNT:[total_layer_count]
 
@@ -201,3 +210,15 @@ Switch to expert mode and configure following properties:
 ### Other slicers
 
 Will work similar, please adapt accordingly and make a pull request here, if you like to.
+
+## Done
+
+Feel free to create pull requests and discussions. I can't solve anything alone.
+
+Have fun!
+
+If you like, buy me a coffee
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/F2F7GC8PC)
+
+freakyDude
