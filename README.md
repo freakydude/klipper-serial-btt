@@ -38,6 +38,7 @@ See my blog [Use your TouchScreen with Klipper on Sidewinder X2](https://blog.fr
     - Current/ All Layer
     - Remaining Time
     - Percentage
+  - Support for a status LED (for example the extruder led on sidewinder x2)
 
 - Please help contributing and moving the project forward
 
@@ -139,6 +140,20 @@ If you like or have to adapt anything and if you don't want to break the update 
 So exclude the linked files and include your adapted copies instead.
 
 Feel free create pull requests if something general is wrong or missing.
+
+### Optional: Support of a status led
+
+Changes to color of a status led (for example on your extruder) on some printer states. To enable that you have to add a neopixel or dotstar config section into your `printer.cfg` with the name `statusled`.
+
+Example config section for Sidewinder X2 Extruder LED
+
+```ini
+[neopixel statusled]
+pin: PB7
+initial_RED: 0.0
+initial_GREEN: 0.25
+initial_BLUE: 0.0
+```
 
 ## Prepare your slicer
 
