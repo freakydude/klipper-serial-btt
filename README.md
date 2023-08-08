@@ -157,7 +157,7 @@ initial_BLUE: 0.0
 
 ## Prepare your slicer
 
-### Prusa slicer settings
+### PrusaSlicer settings
 
 To enable all features, you have to configure things in your slicer (like in native Marlin)
 Switch to expert mode and configure the following properties:
@@ -175,8 +175,11 @@ Switch to expert mode and configure the following properties:
     - Start G-code:
 
       ```gcode
-      M140 S0 # is not needed with Klipper G-code flavor
-      M104 S0 # is not needed with Klipper G-code flavor
+      ### is not needed if Klipper G-code flavor is selected 
+      ### and temperature emit is disable
+      M140 S0 
+      M104 S0
+      ###
 
       ;LAYER_COUNT:[total_layer_count]
 
@@ -184,6 +187,14 @@ Switch to expert mode and configure the following properties:
       SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
 
       START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
+      ```
+
+      Optional, you can set-up your length of filament extrusion for your prime line here. Use the parameter `PRIME` for the filament length to be extruded in mm. This is not the length of the line itself.
+
+      Default is 15mm. If you like to disable the prime line, set `PRIME=0` here.
+
+      ```gcode
+      START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature] PRIME=15
       ```
 
     - End G-code:
@@ -222,9 +233,9 @@ Switch to expert mode and configure the following properties:
       M600
       ```
 
-### Other slicers
+### For other slicers
 
-Will work similar, please adapt accordingly and make a pull request here, if you like to.
+It will work similar, please adapt accordingly and make a pull request here, if you like to.
 
 ## Done
 
