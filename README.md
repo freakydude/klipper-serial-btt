@@ -189,14 +189,6 @@ Switch to expert mode and configure the following properties:
       START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature]
       ```
 
-      Optional, you can set-up your length of filament extrusion for your prime line here. Use the parameter `PRIME` for the filament length to be extruded in mm. This is not the length of the line itself.
-
-      Default is 15mm. If you like to disable the prime line, set `PRIME=0` here.
-
-      ```gcode
-      START_PRINT BED_TEMP=[first_layer_bed_temperature] EXTRUDER_TEMP=[first_layer_temperature] PRIME=15
-      ```
-
     - End G-code:
 
       ```gcode
