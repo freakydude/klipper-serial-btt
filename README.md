@@ -60,6 +60,14 @@ See my blog [Use your TouchScreen with Klipper on Sidewinder X2](https://blog.fr
   git clone https://github.com/freakydude/klipper-serial-btt.git
   ```
 
+### Install required package
+
+- Install the socat package
+
+  ```bash
+  sudo apt -y install socat
+  ```
+
 ### Copy systemd service
 
 - Copy systemd-service/serial-btt-bridge.service to /etc/systemd/system/serial-btt-bridge.service
@@ -67,26 +75,26 @@ See my blog [Use your TouchScreen with Klipper on Sidewinder X2](https://blog.fr
   - For Raspberry Pi 3/4 or CM4
 
     ```bash
-    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-rpi.service /etc/systemd/system/  serial-btt-bridge.service
+    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-rpi.service /etc/systemd/system/serial-btt-bridge.service
     ```
 
   - For BigTreeTech CB1
 
     ```bash
-    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-cb1.service /etc/systemd/system/  serial-btt-bridge.service
+    sudo cp ~/klipper-serial-btt/systemd-service/serial-btt-bridge-cb1.service /etc/systemd/system/serial-btt-bridge.service
     ```
 
     In Addition, ensure you have `console=serial` in your `/boot/BoardEnv.txt`
 
-- _Optional:_ If yoy did anything custom: Open the service, adapt to your home directory and your user
+- _Optional:_ If you did anything custom: Open the service, adapt to your home directory and your user
 
   ```bash
   sudo nano /etc/systemd/system/serial-btt-bridge.service
   ```
 
-  - Optional: Find the following line `ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200`. Replace `/home/pi` by your user. On a raspberry it's `/home/pi`, on a CB1 it's `/home/biqu` by default. Replace `/dev/ttyAMA0` with the serial (UART) interface your level-shifter and BigTreeTech-TouchScreen is connected. **Hint**: On the BigTreeTech CB1 it seems like UART serial pins are not enabled by default.
+  - _Optional_: Find the following line `ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200`. Replace `/home/pi` by your user. On a raspberry it's `/home/pi`, on a CB1 it's `/home/biqu` by default. Replace `/dev/ttyAMA0` with the serial (UART) interface your level-shifter and BigTreeTech-TouchScreen is connected. **Hint**: On the BigTreeTech CB1 it seems like UART serial pins are not enabled by default.
 
-  - Optional: You could also replace "b115200" two times by the serial speed listed in your BigTreeTech Touchscreen. The default 115200Bit/sec is the safe an pre-configured speed. Make sure, you select the same speed in your Touchscreen too.
+  - _Optional_: You could also replace "b115200" two times by the serial speed listed in your BigTreeTech Touchscreen. The default 115200Bit/sec is the safe an pre-configured speed. Make sure, you select the same speed in your Touchscreen too.
 
 - Reload services, start and enable the serial bridge
 
@@ -101,7 +109,7 @@ See my blog [Use your TouchScreen with Klipper on Sidewinder X2](https://blog.fr
   sudo systemctl status serial-btt-bridge.service
   ```
 
-- Optional: Configure your Moonraker update manager.
+- _Optional_: Configure your Moonraker update manager.
 
   - Open your `moonraker.conf`
   - Add a new section
