@@ -8,8 +8,8 @@ WantedBy=multi-user.target
 
 [Service]
 Type=simple
-User=pi
+User=_USER_
 RemainAfterExit=yes
-ExecStart=socat -d /dev/ttyAMA0,b115200 /home/pi/printer_data/comms/klippy.serial,b115200
+ExecStart=_SOCATBIN_ -d /dev/_SERIAL_,b115200 /home/_USER_/printer_data/comms/klippy.serial,b115200
 Restart=always
 RestartSec=15
