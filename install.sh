@@ -29,7 +29,7 @@ case "$USER" in
     print_ "Please specify your user name ($USER): "
     read USER
     [[ -z $USER ]] && { echo_nok "You did not specify a user name"; exit 2; }
-    print_ "Please specify your serial port name (ttyS0, ttyAMA0, ...): "
+    print_ "Please specify the serial port name where you connected the TFT on your board (ttyS0, ttyAMA0, ...): "
     read SERIAL
     [[ -z $SERIAL ]] && { echo_nok "You did not specify a serial port name"; exit 2; }
     print_ "Are these correct? User: $USER / Serial: $SERIAL  -> Press any key to continue or CTRL-C to abort:"
@@ -80,6 +80,7 @@ if [[ `grep -R "\[update_manager klipper-serial-btt\]" ~/printer_data/config/*` 
   echo_ok "OK. Already present"
 else
   cat <<EOF >> ~/printer_data/config/moonraker.conf
+
 [update_manager klipper-serial-btt]
 type: git_repo
 primary_branch: main
